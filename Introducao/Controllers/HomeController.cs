@@ -13,5 +13,12 @@ namespace Introducao.Controllers
         {
             return "Alexandre Ribeiro";
         }
+
+        public string Teste()
+        {
+            return "Teste de Rota";
+        }
     }
+
+
 }
