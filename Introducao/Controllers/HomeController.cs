@@ -55,14 +55,23 @@ namespace Introducao.Controllers
         //}
 
         //Passando os parâmetross por view tipada, somente dá para usar assim, se o formulário já trabalhar com view tipada.
+        //[HttpPost]
+        //public ActionResult Lista(Pessoa pessoa)
+        //{
+        //    ViewData["PessoaId"] = pessoa.PessoaId;
+        //    ViewData["Nome"] = pessoa.Nome;
+        //    ViewData["Tipo"] = pessoa.Tipo;
+
+        //    return View();
+        //}
+
+        //Passando parâmetros com helpers e view tipada. Não precisa receber como ViewData na view.    
         [HttpPost]
         public ActionResult Lista(Pessoa pessoa)
         {
-            ViewData["PessoaId"] = pessoa.PessoaId;
-            ViewData["Nome"] = pessoa.Nome;
-            ViewData["Tipo"] = pessoa.Tipo;
+            
 
-            return View();
+            return View(pessoa);
         }
     }
 

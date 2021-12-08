@@ -1,29 +1,31 @@
 ﻿
+@model Introducao.Models.Pessoa
+
 @{
     ViewBag.Title = "Lista";
 }
 
 <h2>Lista</h2>
 <div>
-    <b>PessoaId</b>
+    <b>@Html.LabelFor( x => x.PessoaId)</b> <!--Pega o nome do label a partir da classe model-->
 </div>
 <div>
-    @ViewData["PessoaId"]
+   @Model.PessoaId
 </div>
 <div>
-    <b>Nome</b>
+    <b>@Html.LabelFor(x => x.Nome)</b>
 </div>
 <div>
-    @ViewData["Nome"]
+    @Model.Nome
 </div>
 <div>
-    <b>Tipo</b>
+    <b>@Html.LabelFor(x => x.Tipo)</b>
 </div>
 <div>
-    @ViewData["Tipo"]
+   @Model.Tipo
 </div>
 
 <br />
 
-<a href="~/">Voltar</a>
+@Html.ActionLink("Voltar", "Index", "Home")
 
