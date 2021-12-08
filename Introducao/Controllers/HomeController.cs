@@ -32,12 +32,35 @@ namespace Introducao.Controllers
             return View();
         }
 
+        //Passando parâmetros na view
+        //[HttpPost]
+        //public ActionResult Lista(int PessoaId, string Nome, string Tipo)
+        //{
+        //    ViewData["PessoaId"] = PessoaId;
+        //    ViewData["Nome"] = Nome;
+        //    ViewData["Tipo"] = Tipo;
+
+        //    return View();
+        //}
+
+        //Passando os parâmetross por formsCollection informando o nome do campo formulário
+        //[HttpPost]
+        //public ActionResult Lista(FormCollection form)
+        //{
+        //    ViewData["PessoaId"] = form["PessoaId"];
+        //    ViewData["Nome"] = form["Nome"];
+        //    ViewData["Tipo"] = form["Tipo"];
+
+        //    return View();
+        //}
+
+        //Passando os parâmetross por view tipada, somente dá para usar assim, se o formulário já trabalhar com view tipada.
         [HttpPost]
-        public ActionResult Lista(int PessoaId, string Nome, string Tipo)
+        public ActionResult Lista(Pessoa pessoa)
         {
-            ViewData["PessoaId"] = PessoaId;
-            ViewData["Nome"] = Nome;
-            ViewData["Tipo"] = Tipo;
+            ViewData["PessoaId"] = pessoa.PessoaId;
+            ViewData["Nome"] = pessoa.Nome;
+            ViewData["Tipo"] = pessoa.Tipo;
 
             return View();
         }
