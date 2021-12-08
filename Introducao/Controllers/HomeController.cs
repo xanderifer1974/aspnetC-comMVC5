@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Introducao.Models;
 using System.Web.Mvc;
 
 namespace Introducao.Controllers
@@ -11,6 +8,17 @@ namespace Introducao.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            Pessoa pessoa = new Pessoa
+            {
+                PessoaId = 1,
+                Nome = "Alexandre Ferreira",
+                Tipo = "Funcionário"
+            };
+
+            ViewData["PessoaId"] = pessoa.PessoaId;
+            ViewData["Nome"] = pessoa.Nome;
+            ViewData["Tipo"] = pessoa.Tipo;
+
             return View();
         }
         
