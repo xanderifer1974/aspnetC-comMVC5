@@ -25,31 +25,37 @@
 <hr />
 <h4>Utilizando a model tipada</h4>
 <br />
-<form action="Home/Lista" method="post">
+@using (Html.BeginForm("Lista", "Home", FormMethod.Post))
+{
+@*<form action="Home/Lista" method="post">*@
     <fieldset>
         <legend>Informações de Pessoas</legend>
         <div>
-            <label for="PessoaId">Código</label>
+            @Html.LabelFor(x => x.PessoaId)
         </div>
         <div>
-            <input type="number" value="@Model.PessoaId" name="PessoaId" />
+            @Html.EditorFor(x => x.PessoaId)
+            @*<input type="number" value="@Model.PessoaId" name="PessoaId" />*@
         </div>
         <div>
-            <label for="Nome">Nome</label>
+            @Html.LabelFor(x => x.Nome)
         </div>
         <div>
-            <input type="text" value="@Model.Nome" name="Nome" />
+            @Html.EditorFor(x => x.Nome)
+            @*<input type="text" value="@Model.Nome" name="Nome" />*@
         </div>
         <div>
-            <label for="Tipo">Tipo de Pessoa</label>
+            @Html.LabelFor(x => x.Tipo)
         </div>
         <div>
-            <input type="text" value="@Model.Tipo" name="Tipo" />
+            @Html.EditorFor(x => x.Tipo)
+            @*<input type="text" value="@Model.Tipo" name="Tipo" />*@
         </div>
         <br />
         <p><input type="submit" value="Enviar" /></p>
     </fieldset>
-</form>
+@*</form>*@
+}
 
 
 
