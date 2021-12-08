@@ -33,8 +33,12 @@ namespace Introducao.Controllers
         }
 
         [HttpPost]
-        public ActionResult Lista()
+        public ActionResult Lista(int PessoaId, string Nome, string Tipo)
         {
+            ViewData["PessoaId"] = PessoaId;
+            ViewData["Nome"] = Nome;
+            ViewData["Tipo"] = Tipo;
+
             return View();
         }
     }
