@@ -19,6 +19,10 @@ namespace Introducao.Controllers
             ViewData["Nome"] = pessoa.Nome;
             ViewData["Tipo"] = pessoa.Tipo;
 
+            ViewBag.id = pessoa.PessoaId;
+            ViewBag.nome = pessoa.Nome;
+            ViewBag.tipo = pessoa.Tipo;
+
             return View();
         }
         
