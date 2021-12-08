@@ -23,11 +23,17 @@ namespace Introducao.Controllers
             ViewBag.nome = pessoa.Nome;
             ViewBag.tipo = pessoa.Tipo;
 
-            return View();
+            return View(pessoa);
         }
         
 
         public ActionResult Contato()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Lista()
         {
             return View();
         }
