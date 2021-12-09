@@ -6,7 +6,7 @@ namespace Introducao.Controllers
     public class UsuarioController : Controller
     {
 
-        public ActionResult Index()
+        public ActionResult Usuario()
         {
             Usuario usuario = new Usuario();
 
@@ -14,7 +14,7 @@ namespace Introducao.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Usuario usuario)
+        public ActionResult Usuario(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
