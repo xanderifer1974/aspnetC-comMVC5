@@ -16,6 +16,16 @@ namespace Introducao.Controllers
         [HttpPost]
         public ActionResult Usuario(Usuario usuario)
         {
+            //if (string.IsNullOrEmpty(usuario.Nome))
+            //{
+            //    ModelState.AddModelError("Nome", "O campo nome é obrigatório!");
+            //}
+
+            //if(usuario.Senha != usuario.ConfirmarSenha)
+            //{
+            //    ModelState.AddModelError("", "As senhas são diferentes!");
+            //}
+
             if (ModelState.IsValid)
             {
                 return View("Resultado", usuario);
