@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Introducao.Models
 {
@@ -13,17 +14,18 @@ namespace Introducao.Models
         [Range(18, 70, ErrorMessage = "A idade tem que estar de 18 a 70 anos!")]
         public int Idade { get; set; }
 
-        [RegularExpression(@"/\S+@\S+\.\S+/", ErrorMessage = "Digite um email válido!")]
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$", ErrorMessage = "Digite um email válido!")]
         public string Email { get; set; }
 
         [RegularExpression(@"[a-zA-Z]{5,15}", ErrorMessage = "Somente letras e de 5 a 15 caracteres!")]
         [Required(ErrorMessage = "O Login é obrigatório!")]
+        [Remote("LoginUnico","Usuario", ErrorMessage = "Este login já existe")]
         public string Login { get; set; }
 
         [Required(ErrorMessage = "A senha é obrigatória!")]
         public string Senha { get; set; }
 
-        [Compare("Senha", ErrorMessage ="As senhas são diferentes!")]
+        [System.ComponentModel.DataAnnotations.Compare("Senha", ErrorMessage ="As senhas são diferentes!")]
         public string ConfirmarSenha { get; set; }
     }
 }
